@@ -1,17 +1,10 @@
-return { 
+return {
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
-		opts = {
-			servers = {
-				lua_ls = {
-					enabled = true,
-					mason = false,
-				},
-			}
-		},
-		config = function()
-			vim.lsp.enable("lua_ls")
-		end,
+		priority = 1001,
 	},
+	vim.lsp.enable("lua_ls"),
+	vim.lsp.enable("clangd"),
+	vim.lsp.enable("rust_analyzer"),
 }

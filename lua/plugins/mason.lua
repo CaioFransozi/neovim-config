@@ -6,15 +6,11 @@ return {
 			"mason-org/mason.nvim",
 			"neovim/nvim-lspconfig",
 		},
-		opts = { automatic_enable = true }
+		opts = { automatic_enable = true },
 	},
 
 	{
 		"mason-org/mason.nvim",
-		opts = {
-			ensure_installed = {
-				"lua-language-server",
-			}
-		}
+		opts = {}
 	}
 }

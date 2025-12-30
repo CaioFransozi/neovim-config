@@ -1,14 +1,8 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		build = ":TSUpdate",
-		opts = {
-			ensure_installed = {
-				"lua",
-				"c",
-				"rust",
-			}
-		}
+		config = function()
+			require'nvim-treesitter'.install { 'rust', 'lua', 'cpp' }
+		end
 	}
 }
