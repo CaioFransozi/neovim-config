@@ -5,6 +5,8 @@ return {
 		dependencies = {
 			"L3MON4D3/LuaSnip"
 		},
-		opts = {},
+		opts = {
+			fuzzy = { implementation = "prefer_rust" }
+		},
 	}
 }
