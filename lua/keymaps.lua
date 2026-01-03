@@ -1,6 +1,14 @@
 	local map = vim.keymap.set
         vim.g.mapleader = ' '
 
+	require("which-key").add({
+	    { '<leader>f', group = 'Telescope' },
+            { '<leader>d', group = 'Diagnostics' },
+            { '<leader>w', group = 'Windows' },
+            { '<leader>h', icon = '' },
+	    { '<leader>b', group = 'Buffers' },
+        })
+
         map('n', '<leader>dn', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
         map('n', '<leader>db', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
         map('n', '<leader>de', '<cmd>Trouble diagnostics toggle<cr>', { desc = 'Show diagnostic error messages' })
@@ -37,24 +45,3 @@
         map('n', '<leader>w,', '<C-w>+', { desc = 'Decrease window height' })
         map('n', '<leader>w>', '<C-w>>', { desc = 'Increase window width' })
         map('n', '<leader>w<', '<C-w><', { desc = 'Decrease window width' })
-
-	require("which-key").add({
-	    { '<leader>f', group = 'Telescope' },
-            { '<leader>d', group = 'Diagnostics' },
-            { '<leader>w', group = 'Windows' },
-            { '<leader>h', icon = '' },
-	    { '<leader>b', group = 'Buffers' },
-        })
-
-	require('blink-cmp').setup {
-		keymap = {
-
-			preset = 'default',
-
-			['<Up>'] = { 'select_prev', 'fallback' },
-			['<Down>'] = { 'select_next', 'fallback' },
-
-			['<cr>'] = { 'accept', 'fallback' }
-
-		}
-	}
