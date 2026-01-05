@@ -15,8 +15,8 @@ return {
 			close_if_last_window = true,
 			default_component_configs = {
 				indent = {
-					indent_size = 2,
-					padding = 0,
+					indent_size = 3,
+					padding = 1,
 					with_markers = true,
 					indent_marker = "│",
 					last_indent_marker = "└",

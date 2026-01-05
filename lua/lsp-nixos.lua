@@ -3,7 +3,7 @@
 	fd_os_release:close()
 	s_os_release = s_os_release:lower()
 	local is_nixos = s_os_release:match("nixos")
-	
+
 	if is_nixos ~= nil then
 		vim.lsp.enable('lua_ls')
 		vim.lsp.enable('rust-analyzer')
