@@ -57,10 +57,10 @@ vim.diagnostic.config({
 })
 
 -- Start terminal in insert mode
-vim.api.nvim_create_autocmd('TermOpen', {
-	group = vim.api.nvim_create_augroup('terminal_open', {}),
-	desc = 'Start terminal in insert mode',
-	pattern = '*',
+vim.api.nvim_create_autocmd({'TermOpen', 'WinEnter', 'BufWinEnter'}, {
+	group = vim.api.nvim_create_augroup('terminal_buffer_change', {}),
+	desc = 'Change mode to insert when opening terminal buffer',
+	pattern = 'term://*',
 	command = 'startinsert'
 })
 
