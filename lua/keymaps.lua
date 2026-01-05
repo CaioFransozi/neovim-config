@@ -11,33 +11,6 @@ require("which-key").add({
 	{ '<leader>t', group = 'Terminal' },
 })
 
--- Define function for opening floating windows
-local function open_floating(relative_size)
-
-	-- Create empty buffer
-	local buf = vim.api.nvim_create_buf(false, true)
-
-	-- Define math for window size
-	local width = math.floor(vim.o.columns * (relative_size / 10))
-	local height = math.floor(vim.o.lines * (relative_size / 10))
-
-	-- Define math for window position
-	local col = math.floor((vim.o.columns - width) / 2)
-	local row = math.floor((vim.o.columns - height) / 2)
-
-	-- Define other window options
-	local opts = {
-		relative = 'editor',
-		width = width,
-		height = height,
-		col = col,
-		row = row,
-		border = 'rounded'
-	}
-
-	vim.api.nvim_open_win(buf, true, opts)
-end
-
 -- Diagnostics
 map('n', '<leader>dn', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 map('n', '<leader>db', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -69,13 +42,18 @@ map('n', '<leader>fh', require("telescope.builtin").help_tags, { desc = 'Telesco
 map('n', '<leader>tn', function()
 	vim.cmd('botright new')
 	vim.cmd.terminal()
-	vim.api.nvim_win_set_height(0, 15)
+	vim.api.nvim_win_set_height(0, 12)
 end, { desc = 'Open new terminal' })
-map('n', '<leader>tt', function()
-	open_floating(7)
-	vim.cmd.terminal()
-end, { desc = 'Open floating terminal' })
-map('t', '<Esc>', '<C-\\><C-n>', { desc = 'Change terminal to normal mode' })
+map('n', '<leader>tt', require("floating-terminal").term_float, { desc = 'Open floating terminal' })
+map('t', '<Esc><Esc>', function ()
+	-- Detect if window is floating or standard
+	if vim.fn.win_gettype() == "popup" then
+		require("floating-terminal").term_float()
+	else
+		local key = vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true)
+		vim.api.nvim_feedkeys(key, 't', false)
+	end
+end, { desc = 'Close floating terminal' })
 
 -- Windows
 map('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
