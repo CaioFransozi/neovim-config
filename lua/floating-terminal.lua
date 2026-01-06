@@ -17,7 +17,7 @@ local function open_floating(opts)
 
 	-- Define math for window position
 	local col = math.floor((vim.o.columns - width) / 2)
-	local row = math.floor((vim.o.columns - height) / 2)
+	local row = math.floor((vim.o.columns - height) / 20)
 
 	-- Create empty buffer
 	local buf = nil

@@ -45,7 +45,7 @@ map('n', '<leader>tn', function()
 	vim.api.nvim_win_set_height(0, 12)
 end, { desc = 'Open new terminal' })
 map('n', '<leader>tt', require("floating-terminal").term_float, { desc = 'Open floating terminal' })
-map('t', '<Esc><Esc>', function ()
+map('t', '<Esc><Esc>', function()
 	-- Detect if window is floating or standard
 	if vim.fn.win_gettype() == "popup" then
 		require("floating-terminal").term_float()
