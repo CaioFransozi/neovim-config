@@ -6,7 +6,6 @@ return {
 			{ "antosha417/nvim-lsp-file-operations", dependencies = { "nvim-lua/plenary.nvim" } },
 			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",
-
 		},
 		opts = {
 			enable_git_status = true,
@@ -25,7 +24,7 @@ return {
 					expander_expanded = "",
 					expander_highlight = "NeoTreeExpander",
 				},
-        		},
-		}
-	}
+			},
+		},
+	},
 }

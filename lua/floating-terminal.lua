@@ -3,7 +3,7 @@ local state = {
 	floating = {
 		buf = -1,
 		win = -1,
-	}
+	},
 }
 
 -- Define function for opening floating windows
@@ -29,12 +29,12 @@ local function open_floating(opts)
 
 	-- Define other window options
 	local win_opts = {
-		relative = 'editor',
+		relative = "editor",
 		width = width,
 		height = height,
 		col = col,
 		row = row,
-		border = 'rounded'
+		border = "rounded",
 	}
 
 	local win = vim.api.nvim_open_win(buf, true, win_opts)
@@ -44,7 +44,7 @@ end
 
 local term_float = function()
 	if not vim.api.nvim_win_is_valid(state.floating.win) then
-		state.floating = open_floating { buf = state.floating.buf }
+		state.floating = open_floating({ buf = state.floating.buf })
 		if vim.bo[state.floating.buf].buftype ~= "terminal" then
 			vim.cmd.terminal()
 		end
@@ -54,5 +54,5 @@ local term_float = function()
 end
 
 return {
-	term_float = term_float
+	term_float = term_float,
 }

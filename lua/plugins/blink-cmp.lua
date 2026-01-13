@@ -3,21 +3,22 @@ return {
 		"saghen/blink.cmp",
 		build = "cargo build --release",
 		dependencies = {
-			"L3MON4D3/LuaSnip"
+			{
+				"L3MON4D3/LuaSnip",
+				build = "make install_jsregexp",
+			},
 		},
 		opts = {
 			fuzzy = { implementation = "prefer_rust" },
 			keymap = {
 
-				preset = 'default',
+				preset = "default",
 
-				['<Up>'] = { 'select_prev', 'fallback' },
-				['<Down>'] = { 'select_next', 'fallback' },
+				["<Up>"] = { "select_prev", "fallback" },
+				["<Down>"] = { "select_next", "fallback" },
 
-				['<cr>'] = { 'accept', 'fallback' }
-
-			}
-		}
+				["<cr>"] = { "accept", "fallback" },
+			},
+		},
 	},
 }
-

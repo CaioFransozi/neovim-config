@@ -3,26 +3,26 @@ return {
 		"romgrk/barbar.nvim",
 		dependencies = {
 			"lewis6991/gitsigns.nvim",
-			"nvim-tree/nvim-web-devicons"
+			"nvim-tree/nvim-web-devicons",
 		},
 		opts = {
 			animation = false,
 			tabpages = true,
-			focus_on_close = 'previous',
+			focus_on_close = "previous",
 			icons = {
 				dianostics = {
 					[vim.diagnostic.severity.ERROR] = { enabled = true },
 					[vim.diagnostic.severity.WARN] = { enabled = true },
 				},
 				gitsigns = {
-					added = {enabled = true, icon = '+'},
-					changed = {enabled = true, icon = '~'},
-					deleted = {enabled = true, icon = '-'},
+					added = { enabled = true, icon = "+" },
+					changed = { enabled = true, icon = "~" },
+					deleted = { enabled = true, icon = "-" },
 				},
 			},
 			sidebar_filetypes = {
-				['neo-tree'] = {event = 'BufWipeout'},
+				["neo-tree"] = { event = "BufWipeout" },
 			},
-		}
-	}
+		},
+	},
 }
