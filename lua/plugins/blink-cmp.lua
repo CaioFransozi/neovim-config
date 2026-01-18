@@ -9,6 +9,7 @@ return {
 			},
 		},
 		opts = {
+			snippets = { preset = "luasnip" },
 			fuzzy = { implementation = "prefer_rust" },
 			keymap = {
 
@@ -18,6 +19,9 @@ return {
 				["<Down>"] = { "select_next", "fallback" },
 
 				["<cr>"] = { "accept", "fallback" },
+			},
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
 			},
 		},
 	},
