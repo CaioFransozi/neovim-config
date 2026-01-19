@@ -8,6 +8,9 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 		opts = {
+			window = {
+				width = 50,
+			},
 			enable_git_status = true,
 			enable_diagnostics = true,
 			open_files_do_not_replace_types = { "terminal", "trouble", "qf", "outline" },
