@@ -53,6 +53,7 @@ map("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Telesc
 map("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Telescope live grep" })
 map("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Telescope buffers" })
 map("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Telescope help tags" })
+map("n", "<leader>fr", require("telescope").extensions.repo.list, { desc = "Telescope repositories" })
 
 -- Terminal
 map("n", "<leader>tn", new_term, { desc = "Open new terminal" })

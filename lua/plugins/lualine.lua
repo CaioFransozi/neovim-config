@@ -6,7 +6,7 @@ return {
 		},
 		opts = {
 			icons_enabled = true,
-			theme = "vscode",
+			theme = "auto",
 		},
 	},
 }
