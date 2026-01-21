@@ -26,6 +26,7 @@ vim.opt.termguicolors = true
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.o.cursorline = true
+vim.opt.fillchars = {eob = " "}
 
 -- Set clipboard provider
 vim.opt.clipboard = "unnamedplus"
@@ -72,7 +73,7 @@ require("lazy").setup({
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "teide-dimmed" } },
+	install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
