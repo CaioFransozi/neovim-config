@@ -6,7 +6,6 @@ require("which-key").add({
 	{ "<leader>f", group = "Telescope" },
 	{ "<leader>d", group = "Diagnostics" },
 	{ "<leader>w", group = "Windows" },
-	{ "<leader>h", icon = "" },
 	{ "<leader>b", group = "Buffers" },
 	{ "<leader>t", group = "Terminal" },
 })
@@ -44,16 +43,6 @@ map("n", "<leader>bd", "<cmd>BufferPick<cr>", { desc = "Toggle buffer pick mode"
 
 -- Neo-Tree
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Open Neo-Tree file browser" })
-
--- Outline
-map("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Open outline viewer" })
-
--- Telescope
-map("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Telescope find files" })
-map("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Telescope live grep" })
-map("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Telescope buffers" })
-map("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Telescope help tags" })
-map("n", "<leader>fr", require("telescope").extensions.repo.list, { desc = "Telescope repositories" })
 
 -- Terminal
 map("n", "<leader>tn", new_term, { desc = "Open new terminal" })
