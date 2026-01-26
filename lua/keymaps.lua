@@ -8,6 +8,7 @@ require("which-key").add({
 	{ "<leader>w", group = "Windows" },
 	{ "<leader>b", group = "Buffers" },
 	{ "<leader>t", group = "Terminal" },
+	{ "<leader>o", icon = "󰍜" },
 })
 
 local function new_term()

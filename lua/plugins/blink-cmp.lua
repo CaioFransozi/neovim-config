@@ -2,6 +2,7 @@ return {
 	{
 		"saghen/blink.cmp",
 		build = "cargo build --release",
+		ft = { "cpp", "lua" },
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
