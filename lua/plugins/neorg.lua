@@ -4,7 +4,6 @@ return {
 		priority = 1002,
 		lazy = false,
 		version = "*",
-		build = ":Neorg sync-parsers",
 		config = function()
 			require("neorg").setup({
 				load = {
