@@ -19,8 +19,12 @@ return {
 						},
 					},
 					["core.dirman"] = {
-						workspaces = {
-							notes = "~/Notas",
+						config = {
+							workspaces = {
+								notes = "~/Notas",
+								cpp = "~/Notas/C++/",
+								univates = "~/Notas/Univates/",
+							},
 						},
 					},
 					["core.highlights"] = {},
