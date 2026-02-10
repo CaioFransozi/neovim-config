@@ -21,7 +21,7 @@ return {
 				},
 			},
 			sidebar_filetypes = {
-				["neo-tree"] = { event = "BufWipeout" },
+				["snacks_layout_box"] = { event = "BufWipeout" },
 			},
 		},
 	},

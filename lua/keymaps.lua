@@ -1,14 +1,15 @@
 local map = vim.keymap.set
+local Snacks = require("snacks")
 vim.g.mapleader = " "
 
 -- Define which key keymap groups and icons
 require("which-key").add({
-	{ "<leader>f", group = "Telescope" },
+	{ "<leader>f", group = "Picker", icon = '' },
 	{ "<leader>d", group = "Diagnostics" },
 	{ "<leader>w", group = "Windows" },
 	{ "<leader>b", group = "Buffers" },
 	{ "<leader>t", group = "Terminal" },
-	{ "<leader>o", icon = "󰍜" },
+	{ "<leader>o", icon = '󰍜' },
 })
 
 local function new_term()
@@ -42,8 +43,15 @@ map("n", "<leader>bl", "<cmd>BufferMoveNext<cr>", { desc = "Move current buffer 
 map("n", "<leader>bh", "<cmd>BufferMovePrevious<cr>", { desc = "Move current buffer to the left" })
 map("n", "<leader>bd", "<cmd>BufferPick<cr>", { desc = "Toggle buffer pick mode" })
 
--- Neo-Tree
-map("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Open Neo-Tree file browser" })
+-- Explorer
+map("n", "<leader>e", function () Snacks.explorer() end, { desc = "Open file explorer" })
+
+-- Picker
+map("n", "<leader>ff", function () Snacks.picker.files() end, { desc = "Find files" })
+map("n", "<leader>fg", function () Snacks.picker.grep() end, { desc = "Livegrep" })
+map("n", "<leader>fp", function () Snacks.picker.projects() end, { desc = "Find projects" })
+map("n", "<leader>fh", function () Snacks.picker.help() end, { desc = "Find help" })
+map("n", "<leader>fb", function () Snacks.picker.buffers() end, { desc = "Find buffers" })
 
 -- Terminal
 map("n", "<leader>tn", new_term, { desc = "Open new terminal" })
