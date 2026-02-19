@@ -7,6 +7,12 @@ return {
 		opts = {
 			icons_enabled = true,
 			theme = "auto",
+			extensions = {
+				"fzf",
+				"lazy",
+				"mason",
+				"trouble",
+			}
 		},
 	},
 }
