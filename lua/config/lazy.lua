@@ -28,6 +28,7 @@ vim.wo.number = true
 vim.o.cursorline = true
 vim.opt.fillchars = {eob = " "}
 vim.opt.conceallevel = 3
+vim.opt.laststatus = 3
 
 -- Set clipboard provider
 vim.opt.clipboard = "unnamedplus"

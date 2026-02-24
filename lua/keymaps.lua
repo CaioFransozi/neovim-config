@@ -36,9 +36,9 @@ map("n", "<leader>df", "<cmd>Trouble qflist toggle<cr>", { desc = "Show diagnost
 
 -- Buffers
 map("n", "<leader>bc", "<cmd>BufferClose<cr>", { desc = "Close current buffer" })
-map("n", "<leader>bn", "<cmd>BufferNext<cr>", { desc = "Move to the next buffer" })
-map("n", "<leader>bb", "<cmd>BufferPrevious<cr>", { desc = "Move to the previous buffer" })
-map("n", "<leader>bp", "<cmd>BufferPin<cr>", { desc = "Pin current buffer" })
+map("n", "<C-n>", "<cmd>BufferNext<cr>", { desc = "Move to the next buffer" })
+map("n", "<C-b>", "<cmd>BufferPrevious<cr>", { desc = "Move to the previous buffer" })
+map("n", "<leader>bp", "<cmd>BufferPick<cr>", { desc = "Open buffer picker" })
 map("n", "<leader>bl", "<cmd>BufferMoveNext<cr>", { desc = "Move current buffer to the right" })
 map("n", "<leader>bh", "<cmd>BufferMovePrevious<cr>", { desc = "Move current buffer to the left" })
 map("n", "<leader>bd", "<cmd>BufferPick<cr>", { desc = "Toggle buffer pick mode" })

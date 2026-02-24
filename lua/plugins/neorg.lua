@@ -24,6 +24,7 @@ return {
 								notes = "~/Notas",
 								cpp = "~/Notas/C++/",
 								univates = "~/Notas/Univates/",
+								electronics = "~/Notas/teach-yourself-electricity-and-electronics/",
 							},
 						},
 					},
