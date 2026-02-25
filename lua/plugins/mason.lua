@@ -1,5 +1,10 @@
 return {
 	{
+		"mason-org/mason.nvim",
+		opts = {},
+	},
+
+	{
 		"mason-org/mason-lspconfig.nvim",
 		lazy = false,
 		dependencies = {
@@ -15,11 +20,6 @@ return {
 			"mason-org/mason.nvim",
 			"mfussenegger/nvim-dap",
 		},
-		opts = {},
-	},
-
-	{
-		"mason-org/mason.nvim",
 		opts = {},
 	},
 }
