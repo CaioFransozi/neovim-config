@@ -10,6 +10,15 @@ return {
 	},
 
 	{
+		"jay-babu/mason-nvim-dap.nvim",
+		dependencies = {
+			"mason-org/mason.nvim",
+			"mfussenegger/nvim-dap",
+		},
+		opts = {},
+	},
+
+	{
 		"mason-org/mason.nvim",
 		opts = {},
 	},
