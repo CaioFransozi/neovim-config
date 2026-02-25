@@ -2,6 +2,11 @@ local map = vim.keymap.set
 local Snacks = require("snacks")
 vim.g.mapleader = " "
 
+local function dapRestart()
+	vim.cmd("DapTerminate")
+	vim.cmd("DapNew")
+end
+
 -- Define which key keymap groups and icons
 require("which-key").add({
 	{ "<leader>f", group = "Picker", icon = '' },
@@ -29,10 +34,14 @@ local function new_floating_term()
 end
 
 -- Diagnostics
-map("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-map("n", "<leader>db", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+map("n", "<leader>dn", "<cmd>DapNew<cr>", { desc = "Start debug session" })
+map("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>", { desc = "Toggle breakpoint in current line" })
+map("n", "<leader>dc", "<cmd>DapContinue<cr>", { desc = "Continue debug session" })
 map("n", "<leader>de", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Show diagnostic error messages" })
 map("n", "<leader>df", "<cmd>Trouble qflist toggle<cr>", { desc = "Show diagnostic quickfixes" })
+map("n", "<leader>dr", dapRestart, { desc = "Restart debug session" } )
+map("n", "<leader>dd", "<cmd>DapTerminate<cr>", { desc = "Terminate debug session" } )
+map("n", "<leader>do", require("dapui").toggle, { desc = "Toggle debug UI" } )
 
 -- Buffers
 map("n", "<leader>bc", "<cmd>BufferClose<cr>", { desc = "Close current buffer" })

@@ -20,6 +20,8 @@ return {
 			"mason-org/mason.nvim",
 			"mfussenegger/nvim-dap",
 		},
-		opts = {},
+		opts = {
+			handlers = {}
+		},
 	},
 }
