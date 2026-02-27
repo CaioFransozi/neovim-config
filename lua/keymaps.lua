@@ -9,12 +9,13 @@ end
 
 -- Define which key keymap groups and icons
 require("which-key").add({
-	{ "<leader>f", group = "Picker", icon = '' },
+	{ "<leader>f", group = "Picker", icon = "" },
 	{ "<leader>d", group = "Diagnostics" },
 	{ "<leader>w", group = "Windows" },
 	{ "<leader>b", group = "Buffers" },
 	{ "<leader>t", group = "Terminal" },
-	{ "<leader>o", icon = '󰍜' },
+	{ "<leader>o", icon = "󰍜" },
+	{ "<leader>r", group = "Compiler actions" },
 })
 
 local function new_term()
@@ -39,9 +40,9 @@ map("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>", { desc = "Toggle breakpoi
 map("n", "<leader>dc", "<cmd>DapContinue<cr>", { desc = "Continue debug session" })
 map("n", "<leader>de", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Show diagnostic error messages" })
 map("n", "<leader>df", "<cmd>Trouble qflist toggle<cr>", { desc = "Show diagnostic quickfixes" })
-map("n", "<leader>dr", dapRestart, { desc = "Restart debug session" } )
-map("n", "<leader>dd", "<cmd>DapTerminate<cr>", { desc = "Terminate debug session" } )
-map("n", "<leader>do", require("dapui").toggle, { desc = "Toggle debug UI" } )
+map("n", "<leader>dr", dapRestart, { desc = "Restart debug session" })
+map("n", "<leader>dd", "<cmd>DapTerminate<cr>", { desc = "Terminate debug session" })
+map("n", "<leader>do", require("dapui").toggle, { desc = "Toggle debug UI" })
 
 -- Buffers
 map("n", "<leader>bc", "<cmd>BufferClose<cr>", { desc = "Close current buffer" })
@@ -53,14 +54,26 @@ map("n", "<leader>bh", "<cmd>BufferMovePrevious<cr>", { desc = "Move current buf
 map("n", "<leader>bd", "<cmd>BufferPick<cr>", { desc = "Toggle buffer pick mode" })
 
 -- Explorer
-map("n", "<leader>e", function () Snacks.explorer() end, { desc = "Open file explorer" })
+map("n", "<leader>e", function()
+	Snacks.explorer()
+end, { desc = "Open file explorer" })
 
 -- Picker
-map("n", "<leader>ff", function () Snacks.picker.files() end, { desc = "Find files" })
-map("n", "<leader>fg", function () Snacks.picker.grep() end, { desc = "Livegrep" })
-map("n", "<leader>fp", function () Snacks.picker.projects() end, { desc = "Find projects" })
-map("n", "<leader>fh", function () Snacks.picker.help() end, { desc = "Find help" })
-map("n", "<leader>fb", function () Snacks.picker.buffers() end, { desc = "Find buffers" })
+map("n", "<leader>ff", function()
+	Snacks.picker.files()
+end, { desc = "Find files" })
+map("n", "<leader>fg", function()
+	Snacks.picker.grep()
+end, { desc = "Livegrep" })
+map("n", "<leader>fp", function()
+	Snacks.picker.projects()
+end, { desc = "Find projects" })
+map("n", "<leader>fh", function()
+	Snacks.picker.help()
+end, { desc = "Find help" })
+map("n", "<leader>fb", function()
+	Snacks.picker.buffers()
+end, { desc = "Find buffers" })
 
 -- Terminal
 map("n", "<leader>tn", new_term, { desc = "Open new terminal" })
