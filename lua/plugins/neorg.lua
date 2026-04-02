@@ -9,10 +9,10 @@ return {
 				load = {
 					["core.defaults"] = {},
 					["core.concealer"] = {
-						config = { -- We added a `config` table!
-							icon_preset = "varied", -- And we set our option here.
+						config = {
+							icon_preset = "varied",
 						},
-					}, -- We added this line!
+					},
 					["core.keybinds"] = {
 						config = {
 							default_keybinds = true,
@@ -29,6 +29,7 @@ return {
 						},
 					},
 					["core.highlights"] = {},
+					["core.export"] = {},
 				},
 			})
 		end,
