@@ -1,11 +1,5 @@
 local map = vim.keymap.set
-local Snacks = require("snacks")
 vim.g.mapleader = " "
-
-local function dapRestart()
-	vim.cmd("DapTerminate")
-	vim.cmd("DapNew")
-end
 
 -- Define which key keymap groups and icons
 require("which-key").add({
@@ -35,14 +29,8 @@ local function new_floating_term()
 end
 
 -- Diagnostics
-map("n", "<leader>dn", "<cmd>DapNew<cr>", { desc = "Start debug session" })
-map("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>", { desc = "Toggle breakpoint in current line" })
-map("n", "<leader>dc", "<cmd>DapContinue<cr>", { desc = "Continue debug session" })
 map("n", "<leader>de", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Show diagnostic error messages" })
 map("n", "<leader>df", "<cmd>Trouble qflist toggle<cr>", { desc = "Show diagnostic quickfixes" })
-map("n", "<leader>dr", dapRestart, { desc = "Restart debug session" })
-map("n", "<leader>dd", "<cmd>DapTerminate<cr>", { desc = "Terminate debug session" })
-map("n", "<leader>do", require("dapui").toggle, { desc = "Toggle debug UI" })
 
 -- Buffers
 map("n", "<leader>bc", "<cmd>BufferClose<cr>", { desc = "Close current buffer" })
@@ -54,26 +42,36 @@ map("n", "<leader>bh", "<cmd>BufferMovePrevious<cr>", { desc = "Move current buf
 map("n", "<leader>bd", "<cmd>BufferPick<cr>", { desc = "Toggle buffer pick mode" })
 
 -- Explorer
-map("n", "<leader>e", function()
-	Snacks.explorer()
-end, { desc = "Open file explorer" })
+map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Open file explorer" })
 
--- Picker
+-- Outline
+map("n", "<leader>o", "<cmd>Outline<cr>", { desc = "Open outline viewer" })
+
+-- Telescope
+map("n", "<leader>fr", function()
+	require("telescope").extensions.repo.list()
+end, { desc = "Telescope repositories" })
 map("n", "<leader>ff", function()
-	Snacks.picker.files()
-end, { desc = "Find files" })
+	require("telescope.builtin").find_files()
+end, { desc = "Telescope find files" })
 map("n", "<leader>fg", function()
-	Snacks.picker.grep()
-end, { desc = "Livegrep" })
-map("n", "<leader>fp", function()
-	Snacks.picker.projects()
-end, { desc = "Find projects" })
-map("n", "<leader>fh", function()
-	Snacks.picker.help()
-end, { desc = "Find help" })
+	require("telescope.builtin").live_grep()
+end, { desc = "Telescope live grep" })
 map("n", "<leader>fb", function()
-	Snacks.picker.buffers()
-end, { desc = "Find buffers" })
+	require("telescope.builtin").buffers()
+end, { desc = "Telescope buffers" })
+map("n", "<leader>fh", function()
+	require("telescope.builtin").help_tags()
+end, { desc = "Telescope help tags" })
+
+-- Flash
+map("n", "s", function()
+	require("flash").jump()
+end, { desc = "Flash" })
+
+-- Compiler
+map("n", "<leader>rr", "<cmd>CompilerOpen<cr>" , { desc = "Open compiler UI" })
+map("n", "<leader>ro", "<cmd>CompilerToggleResults<cr>", { desc = "Toggle compiler results" })
 
 -- Terminal
 map("n", "<leader>tn", new_term, { desc = "Open new terminal" })

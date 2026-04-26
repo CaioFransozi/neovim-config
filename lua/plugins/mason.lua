@@ -1,27 +1,11 @@
 return {
-	{
-		"mason-org/mason.nvim",
-		opts = {},
-	},
-
-	{
-		"mason-org/mason-lspconfig.nvim",
-		lazy = false,
-		dependencies = {
-			"mason-org/mason.nvim",
-			"neovim/nvim-lspconfig",
-		},
-		opts = { automatic_enable = true },
-	},
-
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		dependencies = {
-			"mason-org/mason.nvim",
-			"mfussenegger/nvim-dap",
-		},
-		opts = {
-			handlers = {}
-		},
-	},
+	vim.pack.add({
+		{ src = "https://github.com/mason-org/mason.nvim", name = "mason" },
+		{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+		{ src = "https://github.com/neovim/nvim-lspconfig" },
+	}),
+	require("mason").setup(),
+	require("mason-lspconfig").setup({
+		automatic_enable = true,
+	}),
 }

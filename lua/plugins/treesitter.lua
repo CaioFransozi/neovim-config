@@ -1,16 +1,10 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		priority = 1003,
-		version = "*",
-		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				highlight = {
-					enable = true,
-				},
-			})
-		end,
-	},
+	vim.pack.add({
+		{
+			src = "https://github.com/nvim-treesitter/nvim-treesitter",
+			name = "treesitter",
+		},
+	}),
+
+	require("nvim-treesitter").setup()
 }

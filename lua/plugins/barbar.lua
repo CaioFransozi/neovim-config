@@ -1,28 +1,32 @@
 return {
-	{
-		"romgrk/barbar.nvim",
-		dependencies = {
-			"lewis6991/gitsigns.nvim",
-			"nvim-tree/nvim-web-devicons",
+	vim.pack.add({
+		{
+			src = "https://github.com/romgrk/barbar.nvim",
+			name = "barbar",
 		},
-		opts = {
-			animation = false,
-			tabpages = true,
-			focus_on_close = "previous",
-			icons = {
-				dianostics = {
-					[vim.diagnostic.severity.ERROR] = { enabled = true },
-					[vim.diagnostic.severity.WARN] = { enabled = true },
-				},
-				gitsigns = {
-					added = { enabled = true, icon = "+" },
-					changed = { enabled = true, icon = "~" },
-					deleted = { enabled = true, icon = "-" },
-				},
+		{
+			src = "https://github.com/nvim-tree/nvim-web-devicons",
+			name = "nvim-web-devicons",
+		},
+	}),
+
+	require("barbar").setup({
+		animation = false,
+		tabpages = true,
+		focus_on_close = "previous",
+		icons = {
+			dianostics = {
+				[vim.diagnostic.severity.ERROR] = { enabled = true },
+				[vim.diagnostic.severity.WARN] = { enabled = true },
 			},
-			sidebar_filetypes = {
-				["snacks_layout_box"] = { event = "BufWipeout" },
+			gitsigns = {
+				added = { enabled = true, icon = "+" },
+				changed = { enabled = true, icon = "~" },
+				deleted = { enabled = true, icon = "-" },
 			},
 		},
-	},
+		sidebar_filetypes = {
+			["neo-tree"] = { event = "BufWipeout" },
+		},
+	}),
 }
