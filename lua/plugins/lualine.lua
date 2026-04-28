@@ -10,5 +10,8 @@ return {
 			"mason",
 			"trouble",
 		},
+		options = {
+			globalstatus = true,
+		},
 	}),
 }

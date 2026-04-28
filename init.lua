@@ -14,7 +14,6 @@ vim.wo.number = true
 vim.o.cursorline = true
 vim.opt.fillchars = {eob = " "}
 vim.opt.conceallevel = 3
-vim.opt.laststatus = 3
 
 -- Highlight post yank function
 vim.api.nvim_create_autocmd("TextYankPost", {
