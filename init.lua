@@ -6,6 +6,7 @@ require("keymaps")
 -- Set mapleaders
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.notify = require("notify")
 
 -- Set visual options
 vim.opt.termguicolors = true
