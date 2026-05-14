@@ -1,4 +1,4 @@
-require("plugins/index")
+require("plugins/_index")
 require("floating-terminal")
 require("themes/night-owl")
 require("keymaps")

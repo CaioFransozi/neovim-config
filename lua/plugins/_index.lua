@@ -14,5 +14,6 @@ return {
 	require("plugins/neotree"),
 	require("plugins/telescope"),
 	require("plugins/flash"),
-	require("plugins/compiler")
+	require("plugins/compiler"),
+	require("plugins/gitsigns")
 }
