@@ -15,5 +15,6 @@ return {
 	require("plugins/telescope"),
 	require("plugins/flash"),
 	require("plugins/compiler"),
-	require("plugins/gitsigns")
+	require("plugins/conform"),
+	require("plugins/gitsigns"),
 }

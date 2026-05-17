@@ -2,10 +2,10 @@ return {
 	vim.pack.add({
 		{
 			src = "https://github.com/folke/which-key.nvim",
-			name = "whick-key",
+			name = "which-key",
 		},
 		"https://github.com/nvim-mini/mini.icons",
 	}),
 
-	require("which-key").setup(),
+	require("which-key").setup({}),
 }

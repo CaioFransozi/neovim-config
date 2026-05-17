@@ -70,7 +70,7 @@ map("n", "s", function()
 end, { desc = "Flash" })
 
 -- Compiler
-map("n", "<leader>rr", "<cmd>CompilerOpen<cr>" , { desc = "Open compiler UI" })
+map("n", "<leader>rr", "<cmd>CompilerOpen<cr>", { desc = "Open compiler UI" })
 map("n", "<leader>ro", "<cmd>CompilerToggleResults<cr>", { desc = "Toggle compiler results" })
 
 -- Terminal
@@ -91,4 +91,4 @@ map("n", "<leader>w>", "<C-w>>", { desc = "Increase window width" })
 map("n", "<leader>w<", "<C-w><", { desc = "Decrease window width" })
 
 -- Formatting
-map("n", "<leader>c", vim.lsp.buf.format, { desc = "Format current buffer" })
+map("n", "<leader>c", require("conform").format, { desc = "Format current buffer" })

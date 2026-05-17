@@ -13,7 +13,7 @@ vim.opt.termguicolors = true
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.o.cursorline = true
-vim.opt.fillchars = {eob = " "}
+vim.opt.fillchars = { eob = " " }
 vim.opt.conceallevel = 3
 
 -- Highlight post yank function
